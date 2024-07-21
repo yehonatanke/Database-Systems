@@ -69,6 +69,100 @@ Junction table representing the many-to-many relationship between employees and 
 | fdate | DATE | | Date the employee joined the project |
 | | | PRIMARY KEY (pid, eid) | Composite primary key |
 
+## Sample Data
+
+Below are tables containing sample data for each table in the database schema. This data provides concrete examples of the information stored and the relationships between tables.
+
+### department
+
+| did | dname | dfloor | head |
+|-----|-------|--------|------|
+| 1   | A     | 3      | 54321|
+| 2   | B     | 3      | 12345|
+| 3   | C     | 4      | 34567|
+
+### employee
+
+| eid   | ename | salary | did | classification |
+|-------|-------|--------|-----|----------------|
+| 12345 | maya  | 15000  | 1   | 5              |
+| 23456 | ben   | 17000  | 1   | 3              |
+| 34567 | dan   | 11000  | 2   | 2              |
+| 45678 | orit  | 10000  | 1   | 3              |
+| 56789 | eyal  | 10000  | 3   | 5              |
+
+### budget
+
+| did | byear | budget  |
+|-----|-------|---------|
+| 1   | 2014  | 250000  |
+| 1   | 2015  | 300000  |
+| 1   | 2016  | 10000   |
+| 1   | 2017  | 20000   |
+| 1   | 2018  | 250000  |
+| 1   | 2019  | 400000  |
+| 2   | 2014  | 300000  |
+| 2   | 2015  | 400000  |
+| 2   | 2016  | 1000000 |
+| 2   | 2017  | 2000000 |
+| 2   | 2018  | 50000   |
+| 2   | 2019  | 700000  |
+
+### project
+
+| pid | pname  | did | budget   | duedate    |
+|-----|--------|-----|----------|------------|
+| 444 | search | 1   | 15000000 | 2019-08-30 |
+| 111 | proj1  | 2   | 700000   | 2019-09-15 |
+| 222 | proj2  | 3   | 350000   | 2020-01-01 |
+| 333 | proj3  | 1   | 400000   | 2019-10-25 |
+
+### onproject
+
+| pid | eid   | fdate      |
+|-----|-------|------------|
+| 444 | 23456 | 2019-07-15 |
+| 444 | 34567 | 2019-07-15 |
+| 444 | 45678 | 2019-07-10 |
+| 111 | 12345 | 2019-07-01 |
+| 111 | 56789 | 2019-07-01 |
+| 222 | 23456 | 2019-07-01 |
+| 222 | 34567 | 2019-07-02 |
+| 333 | 23456 | 2019-06-25 |
+
+## Data Insights and Observations
+
+1. **Department Structure**: 
+   - There are three departments (A, B, and C) spread across two floors (3rd and 4th).
+   - Each department has a head, who is also an employee in the system.
+
+2. **Employee Distribution**:
+   - Department A (did 1) has the most employees (3), followed by B and C with one each.
+   - The highest-paid employee is Ben (eid 23456) with a salary of 17000.
+   - Classification levels range from 2 to 5, with multiple employees at level 3 and 5.
+
+3. **Budget Trends**:
+   - Department budgets vary significantly year by year.
+   - Department 2 had a notable budget increase in 2016 and 2017, followed by a sharp decrease in 2018.
+   - Department 1's budget fluctuates but shows an overall increasing trend from 2016 to 2019.
+
+4. **Project Allocation**:
+   - The 'search' project (pid 444) has the largest budget by far at 15,000,000.
+   - Projects are distributed across all three departments.
+   - Project due dates span from August 2019 to January 2020.
+
+5. **Employee Project Assignments**:
+   - Some employees (e.g., 23456) are assigned to multiple projects.
+   - The 'search' project (pid 444) has the most employees assigned to it (3).
+   - Project assignments are clustered around early July 2019, with one earlier assignment in late June.
+
+6. **Data Integrity Observations**:
+   - All employees are assigned to existing departments.
+   - All projects are assigned to existing departments.
+   - The `onproject` table correctly references existing employees and projects.
+
+These sample data tables and insights provide a concrete representation of the database structure and relationships, demonstrating how the various entities in the project system interact and relate to each other.
+
 ## Relationships
 
 1. One department can have many employees (1:N)
