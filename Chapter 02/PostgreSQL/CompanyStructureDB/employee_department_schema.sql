@@ -40,7 +40,6 @@ CREATE TABLE budget (
 CREATE TABLE project (
     pid NUMERIC(3,0) PRIMARY KEY,
     pname VARCHAR(30),
-    salary INT,
     did NUMERIC(3,0),
     budget INT,
     duedate DATE,
