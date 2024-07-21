@@ -20,7 +20,7 @@ CREATE TABLE room (
 -- Semester table
 -- Stores information about academic semesters
 CREATE TABLE semester (
-    sid INTEGER PRIMARY KEY,  -- Semester ID
+    sid CHAR(10) PRIMARY KEY, -- Semester ID
     sdate DATE NOT NULL,      -- Start date of the semester
     edate DATE NOT NULL,      -- End date of the semester
     CHECK (sdate < edate)
@@ -31,7 +31,7 @@ CREATE TABLE semester (
 CREATE TABLE revent (
     reid INTEGER PRIMARY KEY,  -- Regular event ID
     cno VARCHAR(10) NOT NULL,  -- Course number
-    sid INTEGER NOT NULL,      -- Semester ID (foreign key)
+    sid CHAR NOT NULL,         -- Semester ID (foreign key)
     dayofweek INTEGER NOT NULL,  -- Day of the week (1-7)
     stime TIME NOT NULL,       -- Start time of the event
     duration INTEGER NOT NULL, -- Duration in minutes
