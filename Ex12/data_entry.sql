@@ -1,3 +1,5 @@
+-- 3 --
+
 -- Insert data into client table
 INSERT INTO client (cname, address, phone, email) VALUES
 ('eric', '123 Main St', '555-1111', 'eric@client.com'),
