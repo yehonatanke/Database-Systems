@@ -6,8 +6,8 @@ This query finds lawyers who meet the following criteria:
 2. They have reported hours on more cases than the number of cases Jessica is responsible for.
 */
 SELECT 
-    l.lname,
-    l.specialization
+    l.lname as "Lawyer Name",
+    l.specialization as "Specialization"
 FROM 
     lawyer l
 	JOIN (
