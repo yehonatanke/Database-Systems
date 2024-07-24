@@ -1,6 +1,5 @@
 -- 1 --
 
-
 -- Drop existing tables if they exist
 DROP TABLE IF EXISTS client CASCADE;
 DROP TABLE IF EXISTS lawyer CASCADE;
