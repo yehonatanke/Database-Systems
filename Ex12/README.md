@@ -1,4 +1,9 @@
+<div align="center">
+  <img src="https://img.shields.io/badge/language-PostgreSQL-blue.svg?logo=postgresql">
+  <img src="https://custom-icon-badges.demolab.com/badge/license-MIT-green.svg?logo=law">
+
 # Law Firm Database Schema 
+</div>
 
 This document outlines the database schema for a law firm management system.
 
