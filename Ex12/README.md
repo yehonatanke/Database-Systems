@@ -2,6 +2,66 @@
 
 This document outlines the database schema for a law firm management system.
 
+## Project Structure
+
+The project consists of the following SQL files:
+
+1. `law_firm_schema.sql`: Database Schema
+2. `update_billing_rate_trigger.sql`: Trigger Function
+3. `3 data_entry.sql`: Data Insertion
+4. `open_cases_query.sql`: Active Cases Query
+5. `one_case_client_query.sql`: Single Case Clients Query
+6. `6 at_least_two_active_cases.sql`: Multiple Active Cases Query
+7. `total_billing.sql`: Monthly Billing Report
+8. `more_than_jessica.sql`: High-Workload Lawyers Query
+9. `max_non_partners_lawyers_case.sql`: Maximum Lawyers on Case Query
+10. `10 non-partner_assist.sql`: Non-Partner Lawyer Query
+
+## File Descriptions
+
+### 1. law_firm_schema.sql
+
+This file contains the SQL commands to create the database schema. It includes:
+- Dropping existing tables (if any)
+- Creating tables for clients, lawyers, cases, documents, billing, and case assignments
+- Defining primary and foreign key constraints
+
+### 2. update_billing_rate_trigger.sql
+
+This file defines a trigger function and a trigger that automatically calculates the billing amount based on the hours worked and the lawyer's hourly rate.
+
+### 3. 3 data_entry.sql
+
+This file contains INSERT statements to populate the database with sample data for all tables.
+
+### 4. open_cases_query.sql
+
+A query to retrieve information about all active cases, including the case number, title, responsible lawyer, and their specialization.
+
+### 5. one_case_client_query.sql
+
+A query to find clients who have only one case and are working with only one lawyer (the responsible lawyer for the case).
+
+### 6. 6 at_least_two_active_cases.sql
+
+This query identifies clients who have multiple active cases with the same partner lawyer.
+
+### 7. total_billing.sql
+
+A query that generates a monthly billing report, showing the total hours worked and the total amount billed for each lawyer and case combination.
+
+### 8. more_than_jessica.sql
+
+This query finds lawyers who have reported more than 7 hours of work and are working on more cases than Jessica (a specific lawyer in the firm).
+
+### 9. max_non_partners_lawyers_case.sql
+
+A complex query that identifies cases with the maximum number of assigned lawyers, excluding cases where a partner lawyer is involved.
+
+### 10. non-partner_assist.sql
+
+This query finds non-partner lawyers who are responsible for exactly one case and are involved in all but one case in the firm.
+
 ## Schema Overview
 
 ```
